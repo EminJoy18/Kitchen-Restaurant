@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <h1>Starters</h1>
+    <hr width="100%" align="left" size="5px" color="black">
+    <section class="menu">
+        {% for i in starters %}
+            <div class="dish">
+                {% if i.status == 1 %}
+                    <h2 class="dish-name">{{ i.Name }}</h2>
+                {% else %}
+                    <s><h2 class="dish-name">{{ i.Name }}</h2></s>
+                {% endif %}
+                <p class="dish-description">{{ i.Description }}</p>
+                <h3 class="dish-price">₹{{ i.Price }}</h3>
+            </div>
+        {% endfor %}
+    </section>
+
+    <!--------------------------------------------------------------------->
+
+    <h1 style="margin-top: 50px;">Salads</h1>
+    <hr width="100%" align="left" size="5px" color="black">
+    <section class="menu">
+        {% for i in salads %}
+            <a href="{% url 'details' i.pk %}" style="text-decoration: none; color: black;">
+                <div class="dish">
+                    {% if i.status == 1 %}
+                        <h2 class="dish-name">{{ i.Name }}</h2>
+                    {% else %}
+                        <s><h2 class="dish-name">{{ i.Name }}</h2></s>
+                    {% endif %}
+                    <p class="dish-description">{{ i.Description }}</p>
+                    <h3 class="dish-price">₹{{ i.Price }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+
+    <!--------------------------------------------------------------------->
+
+    <h1 style="margin-top: 50px;">Main Course</h1>
+    <hr width="100%" align="left" size="5px" color="black">
+    <section class="menu">
+        {% for i in maincourse %}
+            <a href="{% url 'details' i.pk %}" style="text-decoration: none; color: black;">
+                <div class="dish">
+                    {% if i.status == 1 %}
+                        <h2 class="dish-name">{{ i.Name }}</h2>
+                    {% else %}
+                        <s><h2 class="dish-name">{{ i.Name }}</h2></s>
+                    {% endif %}
+                    <p class="dish-description">{{ i.Description }}</p>
+                    <h3 class="dish-price">₹{{ i.Price }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+
+    <!--------------------------------------------------------------------->
+
+    <h1 style="margin-top: 50px;">Desserts</h1>
+    <hr width="100%" align="left" size="5px" color="black">
+    <section class="menu">
+        {% for i in desserts %}
+            <a href="{% url 'details' i.pk %}" style="text-decoration: none; color: black;">
+                <div class="dish">
+                    {% if i.status == 1 %}
+                        <h2 class="dish-name">{{ i.Name }}</h2>
+                    {% else %}
+                        <s><h2 class="dish-name">{{ i.Name }}</h2></s>
+                    {% endif %}
+                    <p class="dish-description">{{ i.Description }}</p>
+                    <h3 class="dish-price">₹{{ i.Price }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+
+</main>
+{% endblock %}

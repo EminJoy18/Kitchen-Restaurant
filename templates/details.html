@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="landing" style="background-color: white; color: black; flex-direction: column;">
+    <h1>{{dish.Name}}</h1><br>
+    <h3 style="font-weight: normal;">{{ dish.Description }}</h3>
+    <h2>₹ {{ dish.Price }}</h2>
+</div>
+{% endblock %}
